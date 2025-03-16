@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d21e2c31-7268-4659-a47e-bf8a122f27b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Animators.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Animators/Pumpjack.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Animators/Pumpjack.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/BackgroundMusic.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/BackgroundMusic.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/EngineDriving.aif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/EngineDriving.aif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/EngineIdle.aif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/EngineIdle.aif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShellExplosion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShellExplosion.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShotCharging.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShotCharging.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShotFiring.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/ShotFiring.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/TankExplosion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../AudioClips/TankExplosion.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Editor/MoveSceneViewCamera.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Editor/MoveSceneViewCamera.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts/Bowlby_One.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts/Bowlby_One/BowlbyOne-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts/Bowlby_One/BowlbyOne-Regular.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts/Bowlby_One/FontLicense.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Fonts/Bowlby_One/FontLicense.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Blue.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Blue.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Brown.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Brown.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingGlass.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingGlass.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingGrey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingGrey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingMetal.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingMetal.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingStone.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingStone.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingWhite.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/BuildingWhite.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Dust.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Dust.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Explosion.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Explosion.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Gold.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Gold.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Green.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Green.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Grey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Grey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/OilDrums.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/OilDrums.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Red.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Red.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Smoke.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/Smoke.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankColour.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankColour.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankGrey.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankGrey.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankLights.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/TankLights.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/White.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/White.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/YellowDark.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/YellowDark.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/YellowLight.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Materials/YellowLight.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Building01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Building01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Building02.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Building02.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/BustedTank.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/BustedTank.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cactus.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cactus.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cliff.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cliff.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Column01.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Column01.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Column02.FBX" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Column02.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Concrete.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Concrete.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cow.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Cow.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Crater01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Crater01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Dunes01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Dunes01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Dunes02.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Dunes02.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Helipad.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Helipad.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/OilStorage.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/OilStorage.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/PalmTree.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/PalmTree.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/PumpJack.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/PumpJack.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Radar.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Radar.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Refinery.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Refinery.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks02.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks02.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks03.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Rocks03.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Ruins01.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Ruins01.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Shell.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Shell.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Tank.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Tank.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Terrain.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Terrain.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Tree.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Models/Tree.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/DustTrail.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/DustTrail.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/LevelArt.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/LevelArt.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/PumpJack.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/PumpJack.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/ShellExplosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/ShellExplosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/TankExplosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Prefabs/TankExplosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Profiles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Profiles/GlobalProfile.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Profiles/GlobalProfile.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Readme.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Readme.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Camera/CameraControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Camera/CameraControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Managers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Managers/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Managers/TankManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Managers/TankManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Shell.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Shell/ShellExplosion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Shell/ShellExplosion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankHealth.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankHealth.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankShooting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/Tank/TankShooting.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/UI/UIDirectionControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Scripts/UI/UIDirectionControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Aim Arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Aim Arrow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Health Wheel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Health Wheel.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Smoke.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Sprites/Smoke.tif.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Tanks!_Third-PartyNotice.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Tanks!_Third-PartyNotice.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Icons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Icons/Help_Icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Icons/Help_Icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Icons/Tanks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Icons/Tanks.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Layout.wlt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Layout.wlt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor/ReadmeEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Editor/ReadmeEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Readme.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../TutorialInfo/Scripts/Readme.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Complete-Game/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../_Completed-Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Animators.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Animators/CompletePumpjack.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Animators/CompletePumpjack.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AudioMixers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AudioMixers/CompleteMainMix.mixer" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../AudioMixers/CompleteMainMix.mixer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteDustTrail.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteDustTrail.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteLevelArt.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteLevelArt.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompletePumpJack.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompletePumpJack.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShell.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShell.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShellAlt.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShellAlt.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShellExplosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteShellExplosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteTank.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteTank.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteTankExplosion.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prefabs/CompleteTankExplosion.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camera.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camera/CameraControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camera/CameraControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camera/CameraFollow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Camera/CameraFollow.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Managers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TankManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TankManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shell.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shell/ShellExplosion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shell/ShellExplosion.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankHealth.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankHealth.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankMovement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankShooting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tank/TankShooting.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/UIDirectionControl.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UI/UIDirectionControl.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Packages/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/ClusterInputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/InputManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/MemorySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/MultiplayerManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/PresetManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/TagManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/TimeManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/VFXManager.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/VersionControlSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../ProjectSettings/XRSettings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2uNkua2x231YXLa7rojsXqpphr3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d21e2c31-7268-4659-a47e-bf8a122f27b1" name="Changes" comment="" />
+      <created>1742096644260</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742096644260</updated>
+      <workItem from="1742096646290" duration="78000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
