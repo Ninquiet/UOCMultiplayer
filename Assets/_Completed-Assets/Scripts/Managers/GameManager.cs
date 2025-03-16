@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using Complete.CineMachine;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,6 +30,8 @@ namespace Complete
         private GameObject _spectatorPrefab;
         [SerializeField] 
         private GameObject _MapGameObject;
+        [SerializeField]
+        private TMP_Text _initialText;
         
         private int m_RoundNumber;                  // Which round the game is currently on
         private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts
@@ -51,6 +55,7 @@ namespace Complete
 
             // Once the tanks have been created and the camera is using them as targets, start the game
             StartCoroutine (GameLoop());
+            _initialText.DOFade(1,4).OnComplete( () => _initialText.DOFade(0,4).SetDelay(2) );
         }
 
         public void SpawnANewTank(InputsButtons inputsButtons)
