@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Complete
@@ -17,7 +18,7 @@ namespace Complete
         private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed
         private float m_CurrentHealth;                      // How much health the tank currently has
         private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
-
+        public Action OnTankDeath;
 
         private void Awake()
         {
@@ -83,6 +84,8 @@ namespace Complete
 
             // Play the tank explosion sound effect
             m_ExplosionAudio.Play();
+            
+            OnTankDeath?.Invoke();
 
             // Turn the tank off
             gameObject.SetActive (false);

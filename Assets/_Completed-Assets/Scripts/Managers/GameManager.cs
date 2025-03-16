@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Complete.CineMachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,69 +15,130 @@ namespace Complete
         public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
         public GameObject m_TankPrefab;             // Reference to the prefab the players will control
-        public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks
-
+        public TankManager[] m_Tanks;  
+        
+        [Header("ExtraReferences")]
+        [SerializeField]
+        private CMCameraController _defaultCMCameraController;
+        [SerializeField]
+        private GameObject _cmCameraControllerPrefab;
+        [SerializeField]
+        private InputsManager _inputsManager;
+        [SerializeField]
+        private GameObject _spectatorPrefab;
         
         private int m_RoundNumber;                  // Which round the game is currently on
         private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts
         private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends
         private TankManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won
         private TankManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won
+        private int _currentAmountOfPlayers;
 
+        private void Awake()
+        {
+            _inputsManager.NewInputSetIsActive += SpawnANewTank;
+        }
 
         private void Start()
         {
             // Create the delays so they only have to be made once
             m_StartWait = new WaitForSeconds (m_StartDelay);
             m_EndWait = new WaitForSeconds (m_EndDelay);
-
-            SpawnAllTanks();
+            
             SetCameraTargets();
 
             // Once the tanks have been created and the camera is using them as targets, start the game
             StartCoroutine (GameLoop());
         }
 
-		
-		private void SpawnAllTanks()
-		{
-			Camera mainCam = GameObject.Find ("Main Camera").GetComponent<Camera>();
-
-			// For all the tanks...
-			for (int i = 0; i < m_Tanks.Length; i++)
-			{
-				// ... create them, set their player number and references needed for control
-				m_Tanks[i].m_Instance =
-					Instantiate (m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
-				m_Tanks[i].m_PlayerNumber = i + 1;
-				m_Tanks[i].Setup();
-				AddCamera (i, mainCam);
-			}
-
-			mainCam.gameObject.SetActive (false);
-		}
-
-		private void AddCamera (int i, Camera mainCam)
+        public void SpawnANewTank(InputsButtons inputsButtons)
         {
-			GameObject childCam = new GameObject ("Camera" + (i + 1));
-			Camera newCam = childCam.AddComponent<Camera>();		
-			newCam.CopyFrom (mainCam);
+            if (_currentAmountOfPlayers == 0)
+             StartCoroutine(DisableDefaultCamera());
+            
+            if (_currentAmountOfPlayers >= 4)
+                return;
+            
+            SpawnANewTank(_currentAmountOfPlayers, inputsButtons);
+        }
 
-			childCam.transform.parent = m_Tanks[i].m_Instance.transform;
+        private IEnumerator DisableDefaultCamera()
+        {
+            _defaultCMCameraController.SetTarget(null,0);
+            _defaultCMCameraController.transform.position = new Vector3(1000, 1000, -40);
+            yield return new WaitForSeconds(3f);
+            _defaultCMCameraController.gameObject.SetActive (false);
+        }
 
-            if (i == 0)
+        private void SpawnANewTank(int i, InputsButtons inputsButtons)
+        {
+            if (m_Tanks.Length <= i)
+                return;
+            
+            m_Tanks[i].m_Instance =
+                Instantiate (m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+            m_Tanks[i].m_PlayerNumber = i + 1;
+            
+            var tankHealth = m_Tanks[i].m_Instance.GetComponent<TankHealth>();
+            m_Tanks[i].tankHealth = tankHealth;
+            
+            m_Tanks[i].Setup(inputsButtons,_spectatorPrefab);
+                
+            m_Tanks[i].CmCameraController = AddCamera (i,m_Tanks[i].m_Instance.transform);
+            m_Tanks[i].Channel = i + 1;
+            
+            
+            _currentAmountOfPlayers++;
+            
+            UpdateCameraRects();
+        }
+
+        private CMCameraController AddCamera (int i, Transform target)
+        {
+			var newCMCameraController = Instantiate (_cmCameraControllerPrefab).GetComponent<CMCameraController> ();
+            newCMCameraController.SetTarget (target, i + 1);
+
+            return newCMCameraController;
+        }
+
+        private void UpdateCameraRects()
+        {
+            switch (_currentAmountOfPlayers)
             {
-                newCam.rect = new Rect (0.0f, 0.5f, 0.89f, 0.5f);
+                case 1:
+                    if (m_Tanks[0].CmCameraController != null)
+                        m_Tanks[0].CmCameraController.SetViewportRect(0, 0, 1, 1);
+                    break;
+                case 2:
+                    if (m_Tanks[0].CmCameraController != null)
+                        m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 1f, 0.5f);
+                    if (m_Tanks[1].CmCameraController != null)
+                        m_Tanks[1].CmCameraController.SetViewportRect(0, 0, 1f, 0.5f);
+                    break;
+                case 3:
+                    if (m_Tanks[0].CmCameraController != null)
+                        m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 0.5f, 0.5f);
+                    if (m_Tanks[1].CmCameraController != null)
+                        m_Tanks[1].CmCameraController.SetViewportRect(0, 0, 0.5f, 0.5f);
+                    if (m_Tanks[2].CmCameraController != null)
+                        m_Tanks[2].CmCameraController.SetViewportRect(0.5f, 0, 0.5f, 0.5f);
+                    break;
+                case 4:
+                    if (m_Tanks[0].CmCameraController != null)
+                        m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 0.5f, 0.5f);
+                    if (m_Tanks[1].CmCameraController != null)
+                        m_Tanks[1].CmCameraController.SetViewportRect(0, 0, 0.5f, 0.5f);
+                    if (m_Tanks[2].CmCameraController != null)
+                        m_Tanks[2].CmCameraController.SetViewportRect(0.5f, 0, 0.5f, 0.5f);
+                    if (m_Tanks[3].CmCameraController != null)
+                        m_Tanks[3].CmCameraController.SetViewportRect(0.5f, 0.5f, 0.5f, 0.5f);
+                    break;
             }
-            else
-            {
-                newCam.rect = new Rect (0.11f, 0.0f, 0.89f, 0.5f);
-            }
-		}
-
+        }
 
         private void SetCameraTargets()
         {
+            return;
             // Create a collection of transforms the same size as the number of tanks
             Transform[] targets = new Transform[m_Tanks.Length];
 
@@ -122,7 +185,7 @@ namespace Complete
         {
             // As soon as the round starts reset the tanks and make sure they can't move
             ResetAllTanks();
-            DisableTankControl();
+            //DisableTankControl();
 
             // Snap the camera's zoom and position to something appropriate for the reset tanks
             m_CameraControl.SetStartPositionAndSize();
@@ -143,6 +206,11 @@ namespace Complete
 
             // Clear the text from the screen
             m_MessageText.text = string.Empty;
+
+            while (_currentAmountOfPlayers == 0)
+            {
+                yield return null;
+            }
 
             // While there is not one tank left...
             while (!OneTankLeft())
@@ -185,10 +253,17 @@ namespace Complete
         {
             // Start the count of tanks left at zero
             int numTanksLeft = 0;
+            
+            if (_currentAmountOfPlayers < 2)
+                return false;
 
             // Go through all the tanks...
             for (int i = 0; i < m_Tanks.Length; i++)
             {
+                var isTankActive = m_Tanks[i].m_Instance != null;
+                if (!isTankActive)
+                    continue;
+                
                 // ... and if they are active, increment the counter
                 if (m_Tanks[i].m_Instance.activeSelf)
                     numTanksLeft++;
@@ -272,7 +347,8 @@ namespace Complete
         {
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                m_Tanks[i].Reset();
+                if (m_Tanks[i].m_Instance != null)
+                    m_Tanks[i].Reset();
             }
         }
 
@@ -281,7 +357,11 @@ namespace Complete
         {
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                m_Tanks[i].EnableControl();
+                if (m_Tanks[i].m_Instance != null)
+                {
+                    m_Tanks[i].EnableControl();
+                    m_Tanks[i].CmCameraController.SetTarget(m_Tanks[i].m_Instance.transform, m_Tanks[i].Channel);
+                }
             }
         }
 
@@ -290,7 +370,8 @@ namespace Complete
         {
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                m_Tanks[i].DisableControl();
+                if (m_Tanks[i].m_Instance != null)
+                    m_Tanks[i].DisableControl();
             }
         }
     }

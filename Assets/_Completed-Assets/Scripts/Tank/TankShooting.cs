@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Complete
@@ -17,14 +18,11 @@ namespace Complete
         public float m_MaxLaunchForce = 30f;        // The force given to the shell if the fire button is held for the max charge time
         public float m_MaxChargeTime = 0.75f;       // How long the shell can charge for before it is fired at max force
 
-
-        private string m_FireButton;                // The input axis that is used for launching shells
-		private string m_AltFireButton;  
         private float m_CurrentLaunchForce;         // The force that will be given to the shell when the fire button is released
         private float m_ChargeSpeed;                // How fast the launch force increases, based on the max charge time
         private bool m_Fired;                       // Whether or not the shell has been launched with this button press
 		private bool m_AltFire;                     // Whether or not the alternate shell has been launched with this button press
-
+		private InputActionReference _fireActionReference;
 
         private void OnEnable()
         {
@@ -36,11 +34,6 @@ namespace Complete
 
         private void Start ()
         {
-            // The fire axis is based on the player number
-            m_FireButton = "Fire" + m_PlayerNumber;
-			m_AltFireButton = "AltFire" + m_PlayerNumber;
-
-
             // The rate that the launch force charges up is the range of possible forces by the max charge time
             m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
 
@@ -48,25 +41,22 @@ namespace Complete
 
 		private bool FireButton (int mode) {
 
-			bool action = false;
-			m_AltFire = false;	
+            var action = false;
+            
+            switch (mode)
+            {
+                case 0:
+                    action = _fireActionReference.action.triggered;
+                    break;
+                case 1:
+                    action = _fireActionReference.action.ReadValue<float>() > 0.5f;
+                    break;
+                case 2:
+                    action = _fireActionReference.action.WasReleasedThisFrame();
+                    break;
+            }
 
-			switch (mode) {
-			case 0:
-				action = Input.GetButtonDown (m_FireButton);
-				m_AltFire = Input.GetButtonDown (m_AltFireButton);					
-			break;
-			case 1:
-				action = Input.GetButton (m_FireButton);
-				m_AltFire = Input.GetButton (m_AltFireButton);
-			break;
-			case 2:
-				action = Input.GetButtonUp (m_FireButton);
-				m_AltFire = Input.GetButtonUp (m_AltFireButton);
-			break;
-			}
-
-			return action || m_AltFire;
+			return action ;
 		}
 
 
@@ -133,6 +123,11 @@ namespace Complete
 
             // Reset the launch force.  This is a precaution in case of missing button events
             m_CurrentLaunchForce = m_MinLaunchForce;
+        }
+
+        public void SetInputsButtons(InputsButtons inputsButtons)
+        {
+	        _fireActionReference = inputsButtons.Fire;
         }
     }
 }

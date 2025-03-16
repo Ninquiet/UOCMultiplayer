@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Complete
 {
@@ -12,21 +13,19 @@ namespace Complete
         public AudioClip m_EngineDriving;           // Audio to play when the tank is moving
 		public float m_PitchRange = 0.2f;           // The amount by which the pitch of the engine noises can vary
 
-
-        private string m_MovementAxisName;          // The name of the input axis for moving forward and back
-        private string m_TurnAxisName;              // The name of the input axis for turning
+        
         private Rigidbody m_Rigidbody;              // Reference used to move the tank
         private float m_MovementInputValue;         // The current value of the movement input
         private float m_TurnInputValue;             // The current value of the turn input
         private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene
-
+        private InputActionReference _moveActionReference;
+        private InputActionReference _turnActionReference;
 
         private void Awake()
         {
             m_Rigidbody = GetComponent<Rigidbody>();
         }
-
-
+        
         private void OnEnable()
         {
             // When the tank is turned on, make sure it's not kinematic
@@ -37,7 +36,6 @@ namespace Complete
             m_TurnInputValue = 0f;
         }
 
-
         private void OnDisable()
         {
             // When the tank is turned off, set it to kinematic so it stops moving
@@ -47,10 +45,6 @@ namespace Complete
 
         private void Start()
         {
-            // The axes names are based on player number
-            m_MovementAxisName = "Vertical" + m_PlayerNumber;
-            m_TurnAxisName = "Horizontal" + m_PlayerNumber;
-
             // Store the original pitch of the audio source
             m_OriginalPitch = m_MovementAudio.pitch;
         }
@@ -59,8 +53,8 @@ namespace Complete
         private void Update ()
         {
             // Store the value of both input axes
-            m_MovementInputValue = Input.GetAxis (m_MovementAxisName);
-            m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
+            m_MovementInputValue = _moveActionReference.action.ReadValue<float>();
+            m_TurnInputValue = _turnActionReference.action.ReadValue<float>();
 
             EngineAudio();
         }
@@ -122,6 +116,12 @@ namespace Complete
 
             // Apply this rotation to the rigidbody's rotation
             m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
+        }
+
+        public void SetInputsButtons(InputsButtons inputsButtons)
+        {
+            _moveActionReference = inputsButtons.Move;
+            _turnActionReference = inputsButtons.Turn;
         }
     }
 }

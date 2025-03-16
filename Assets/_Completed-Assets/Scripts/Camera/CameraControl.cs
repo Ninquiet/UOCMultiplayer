@@ -27,6 +27,7 @@ namespace Complete
 
 
         private void FixedUpdate() {
+            return;
             Move();                                         // Move the camera towards the desired position
 
             if (!splitMode)                                 // Change camera size

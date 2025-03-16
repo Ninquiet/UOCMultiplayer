@@ -1,4 +1,5 @@
 ﻿using System;
+using Complete.CineMachine;
 using UnityEngine;
 
 namespace Complete
@@ -11,6 +12,13 @@ namespace Complete
         // and whether or not players have control of their tank in the 
         // different phases of the game
 
+        [NonSerialized]
+        public CMCameraController CmCameraController;
+        [NonSerialized]
+        public int Channel;
+        [NonSerialized]
+        public TankHealth tankHealth;
+        
         public Color m_PlayerColor;                             // This is the color this tank will be tinted
         public Transform m_SpawnPoint;                          // The position and direction the tank will have when it spawns
         [HideInInspector] public int m_PlayerNumber;            // This specifies which player this the manager for
@@ -22,10 +30,14 @@ namespace Complete
         private TankMovement m_Movement;                        // Reference to tank's movement script, used to disable and enable control
         private TankShooting m_Shooting;                        // Reference to tank's shooting script, used to disable and enable control
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round
+        private InputsButtons _InputsButtons;
+        private GameObject _spectatorPrefab;
 
-
-        public void Setup ()
+        public void Setup (InputsButtons inputsButtons, GameObject spectatorPrefab)
         {
+            _spectatorPrefab = spectatorPrefab;
+            _InputsButtons = inputsButtons;
+            
             // Get references to the components
             m_Movement = m_Instance.GetComponent<TankMovement>();
             m_Shooting = m_Instance.GetComponent<TankShooting>();
@@ -34,6 +46,11 @@ namespace Complete
             // Set the player numbers to be consistent across the scripts
             m_Movement.m_PlayerNumber = m_PlayerNumber;
             m_Shooting.m_PlayerNumber = m_PlayerNumber;
+            
+            m_Movement.SetInputsButtons(inputsButtons);
+            m_Shooting.SetInputsButtons(inputsButtons);
+            
+            tankHealth.OnTankDeath += TankHasDied;
 
             // Create a string using the correct color that says 'PLAYER 1' etc based on the tank's color and the player's number
             m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
@@ -49,6 +66,14 @@ namespace Complete
             }
         }
 
+        private void TankHasDied()
+        {
+            var spectator = GameObject.Instantiate(_spectatorPrefab);
+            var spectatorController = spectator.GetComponent<SpectatorController>();
+            spectatorController.Setup(_InputsButtons, tankHealth.transform.position);
+            
+            CmCameraController.SetTarget(spectator.transform, Channel);
+        }
 
         // Used during the phases of the game where the player shouldn't be able to control their tank
         public void DisableControl()
