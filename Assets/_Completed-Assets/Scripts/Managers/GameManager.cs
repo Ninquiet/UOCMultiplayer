@@ -26,6 +26,8 @@ namespace Complete
         private InputsManager _inputsManager;
         [SerializeField]
         private GameObject _spectatorPrefab;
+        [SerializeField] 
+        private GameObject _MapGameObject;
         
         private int m_RoundNumber;                  // Which round the game is currently on
         private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts
@@ -106,16 +108,19 @@ namespace Complete
             switch (_currentAmountOfPlayers)
             {
                 case 1:
+                    _MapGameObject.SetActive (false);
                     if (m_Tanks[0].CmCameraController != null)
                         m_Tanks[0].CmCameraController.SetViewportRect(0, 0, 1, 1);
                     break;
                 case 2:
+                    _MapGameObject.SetActive (false);
                     if (m_Tanks[0].CmCameraController != null)
                         m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 1f, 0.5f);
                     if (m_Tanks[1].CmCameraController != null)
                         m_Tanks[1].CmCameraController.SetViewportRect(0, 0, 1f, 0.5f);
                     break;
                 case 3:
+                    _MapGameObject.SetActive (true);
                     if (m_Tanks[0].CmCameraController != null)
                         m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 0.5f, 0.5f);
                     if (m_Tanks[1].CmCameraController != null)
@@ -124,6 +129,7 @@ namespace Complete
                         m_Tanks[2].CmCameraController.SetViewportRect(0.5f, 0, 0.5f, 0.5f);
                     break;
                 case 4:
+                    _MapGameObject.SetActive (false);
                     if (m_Tanks[0].CmCameraController != null)
                         m_Tanks[0].CmCameraController.SetViewportRect(0, 0.5f, 0.5f, 0.5f);
                     if (m_Tanks[1].CmCameraController != null)
